@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [1, 2, 3, 4, 5];
+      //   console.log(numbers.includes(0));
+      let details = [
+        { name: "Hitesh", age: 22 },
+        { name: "Mohit", age: 23 },
+      ];
+      let func = details.find(function (func) {
+        return func.name == "Hitesh";
+      });
+      console.log(func);
+      //spread operator
+      let first = [5, 4, 3, 2, 1];
+      let second = [6, 7, 8, 9, 0];
+      // let combined=[...first,...second];
+      // first.forEach(function(number){
+      //   console.log(number);
+      // });
+      for (let values in second) {
+        console.log(second);
+      }
+      first.forEach((element) => {
+        console.log(element);
+      });
+      first.sort();
+    </script>
+  </body>
+</html>

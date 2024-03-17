@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #myCanvas {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" height="200px" width="200px"></canvas>
+    <script>
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      ctx.beginPath();
+      ctx.arc(100, 100, 100, 0, Math.PI);
+      ctx.stroke();
+      ctx.fillStyle = "blue";
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(100, 100, 100, Math.PI, 0);
+      ctx.stroke();
+      ctx.fillStyle = "red";
+      ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(200, 200);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(200, 0);
+      ctx.lineTo(0, 200);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.fillText("Hitesh Natha" ,50,50);
+      ctx.fillStyle="Green";
+      ctx.fill();
+    </script>
+  </body>
+</html>

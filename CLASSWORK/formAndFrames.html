@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms and Frames Lab</title>
+    <style>
+        /* CSS styles for form */
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        label, input, select, textarea {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HTML Forms Exploration -->
+    <form action="submit_form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" checked>
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+
+        <input type="checkbox" id="subscribe" name="subscribe" checked>
+        <label for="subscribe">Subscribe to newsletter</label>
+
+        <label for="country">Select a country:</label>
+        <select id="country" name="country">
+            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- HTML Frames Exploration -->
+    <frameset cols="50%,50%">
+        <frame src="frame1.html" name="frame1">
+        <frame src="frame2.html" name="frame2">
+    </frameset>
+
+</body>
+</html>

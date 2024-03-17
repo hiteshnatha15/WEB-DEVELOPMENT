@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      .error {
+        color: red;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="registrationForm" onsubmit="return validateForm()">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <span id="emailError" class="error"></span><br />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <span id="passwordError" class="error"></span><br />
+
+      <label>
+        <input type="checkbox" id="terms" name="terms" required />
+        I agree to the terms and conditions
+      </label>
+      <span id="termsError" class="error"></span><br />
+
+      <input type="submit" value="Register" />
+    </form>
+
+    <script>
+      function validateForm() {
+        var email = document.getElementById("email").value;
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          document.getElementById("emailError").innerHTML =
+            "Enter a valid email address";
+          return false;
+        }
+
+        var password = document.getElementById("password").value;
+        var passwordRegex =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!passwordRegex.test(password)) {
+          document.getElementById("passwordError").innerHTML =
+            "Password must be strong";
+          return false;
+        }
+
+        var terms = document.getElementById("terms");
+        if (!terms.checked) {
+          document.getElementById("termsError").innerHTML =
+            "Please agree to the terms and conditions";
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>

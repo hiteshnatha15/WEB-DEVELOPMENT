@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function add() {
+        let total = 0;
+        for (let value of arguments) total = total + value;
+        return total;
+
+        let ans = add(1, 2, 3, 3, 4, 5);
+        console.log(ans);
+      }
+
+      function sum(...args) {
+        console.log(args);
+      }
+
+      sum(1, 2, 3, 4, 5, 6);
+
+      let person = {
+        fName: "Hitesh",
+        lName: "Natha",
+        get fullName() {
+          return `${person.fName} ${person.lName}`;
+        },
+        set fullName(value) {
+          if (typeof value !== "string")
+            throw new Error("You have not entered a String.");
+          let parts = value.split(" ");
+          this.fName = parts[0];
+          this.lName = parts[1];
+        },
+      };
+      console.log(person.fName);
+      try {
+        person.fullName = "Hitesh";
+      } catch (e) {
+        alert(e);
+      }
+
+      let arr = [1, 2, 3, 4, 5];
+      let totalSum = arr.reduce(
+        (accumelator, currentValue) => accumelator + currentValue,
+        0
+      );
+      console.log(totalSum);
+      //scopes
+      // const x = 5;
+      // const y = 6;
+      // console.log(`the sum of xand{y} is ${x + y}.`);
+      // const array = [1, 2, 3];
+      // console.log(array[3]);
+
+      // const x=5;
+      // const y="5";
+      // console.log(x===y);
+
+      const x=[1,2,3];
+      const y=x;
+      x.push(4);
+      console.log(y.length);
+      def=my()
+    </script>
+  </body>
+</html>

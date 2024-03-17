@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="num1"> Number 1</label>
+    <input type="text" name="num1" />
+    <label for="num2"> Number 2</label>
+    <input type="text" name="num2" />
+    <br />
+    <input type="text" name="res" />
+    <input type="button" value="+" onclick="add()" />
+    <input type="button" value="-" onclick="subtract()" />
+    <input type="button" value="*" onclick="multiply()" />
+    <input type="button" value="/" onclick="divide()" />
+    <script>
+      function add() {
+        performOperation((a, b) => a + b);
+      }
+      function subtract() {
+        performOperation((a, b) => a - b);
+      }
+      function multiply() {
+        performOperation((a, b) => a * b);
+      }
+      function divide() {
+        performOperation((a, b) => a / b);
+      }
+      function performOperation(operation) {
+        var num1 = parseFloat(document.getElementsByName("num1")[0].value);
+        var num2 = parseFloat(document.getElementsByName("num2")[0].value);
+        if (!isNaN(num1) && !isNaN(num2)) {
+          var result = operation(num1, num2);
+          document.getElementsByName("res")[0].value = result;
+        } else {
+          alert("Please enter valid numbers");
+        }
+      }
+    </script>
+  </body>
+</html>
